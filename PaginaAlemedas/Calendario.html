@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calendario – Alamedas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-cal">
+  <header class="site-header scrolled">
+    <div class="container nav">
+      <a class="brand" href="Portal.html">
+        <span class="brand-main">ALAMEDAS</span>
+        <span class="brand-sub">Santa Ana</span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a class="btn ghost" href="Portal.html">← Volver al portal</a>
+        <a class="btn primary" href="Consulta.html">Ir a consulta →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container cal-shell">
+    <div class="cal-controls">
+      <button id="prevMes" class="cal-nav-btn" aria-label="Mes anterior">◀</button>
+      <h1 id="tituloMes" class="cal-title">Mes Año</h1>
+      <button id="nextMes" class="cal-nav-btn" aria-label="Mes siguiente">▶</button>
+    </div>
+
+    <div id="calendario" class="cal-grid"></div>
+
+    <section class="cal-events">
+      <h3>Eventos del mes</h3>
+      <ul id="lista-eventos"></ul>
+
+      <div class="cal-actions">
+        <a class="btn ghost" href="Portal.html">← Volver al portal</a>
+        <a class="btn primary" href="Consulta.html">Ir a consulta →</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../Lib/sqljs/sql-wasm.js"></script>
+  <script src="../Js/sqlite.js"></script>
+  <script src="../Js/Calendario.js"></script>
+</body>
+</html>

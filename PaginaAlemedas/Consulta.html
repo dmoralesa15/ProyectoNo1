@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Consulta – Alamedas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Estilos mínimos SOLO para el panel de lista (no toca tu CSS global) -->
+  <style>
+    .inq-shell{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    .inq-panel{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .inq-head{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .inq-head h3{margin:0;font-size:18px}
+    .inq-body{padding:12px 16px}
+    .inq-search{display:flex;gap:8px}
+    .inq-search input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:10px}
+    .inq-table{width:100%;border-collapse:collapse;font-size:14px}
+    .inq-table th,.inq-table td{padding:10px;border-bottom:1px solid #eef1f5;text-align:left}
+    .inq-table tbody tr{cursor:pointer}
+    .inq-table tbody tr:hover{background:#f5f8ff}
+    .inq-foot{padding:10px 16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .btn-xs{padding:7px 10px;font-size:12px}
+    .muted{color:var(--muted)}
+    @media (max-width: 960px){.inq-shell{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body class="page">
+
+  <!-- Header simple con navegación consistente -->
+  <header class="site-header scrolled">
+    <div class="container nav">
+      <a class="brand" href="Portal.html">
+        <span class="brand-main">ALAMEDAS</span>
+        <span class="brand-sub">Santa Ana</span>
+      </a>
+
+      <nav class="menu" aria-label="Principal">
+        <a href="Portal.html#servicios">Servicios</a>
+        <a href="Portal.html#comunidad">Comunidad</a>
+        <a href="Portal.html#contacto">Contacto</a>
+        <a class="btn ghost" href="Calendario.html">Calendario</a>
+        <a class="btn primary" href="Consulta.html">Consulta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="page-title">Consulta de inquilino</h1>
+      <p class="section-sub">
+        Ingresa <strong>uno</strong> de los dos campos (DPI o Número de casa) y pulsa <em>Consultar</em>,
+        o <strong>selecciona</strong> un inquilino desde la lista.
+      </p>
+
+      <div class="inq-shell">
+        <!-- PANEL IZQUIERDO: BUSCAR POR DPI / CASA (tu flujo original) -->
+        <div class="card card-pad">
+          <form id="frm" class="consulta-form grid-2" onsubmit="return false;">
+            <div class="form-control">
+              <label for="dpi">DPI</label>
+              <input type="text" id="dpi" placeholder="1234567890101" inputmode="numeric" autocomplete="off">
+              <small class="muted">Escribe el DPI completo sin guiones.</small>
+            </div>
+
+            <div class="form-control">
+              <label for="casa">Número de casa</label>
+              <input type="number" id="casa" min="1" placeholder="Ej. 27" autocomplete="off">
+              <small class="muted">Si no usas DPI, puedes consultar por número de casa.</small>
+            </div>
+
+            <div class="form-actions span-2">
+              <button id="btnBuscar" class="btn primary">Consultar</button>
+              <a class="btn ghost" href="Portal.html">← Volver al portal</a>
+              <a class="btn ghost" href="Calendario.html">Ver calendario →</a>
+              <button id="btnLimpiar" class="btn ghost" type="button">Limpiar</button>
+            </div>
+          </form>
+
+          <section class="section" aria-live="polite" aria-atomic="true">
+            <h2 class="h3">Resultado</h2>
+            <div id="resultado" class="consulta-res card card-pad"></div>
+          </section>
+        </div>
+
+        <!-- PANEL DERECHO: LISTA DE INQUILINOS (nuevo) -->
+        <aside class="inq-panel" aria-label="Lista de inquilinos">
+          <div class="inq-head">
+            <h3>Lista de inquilinos</h3>
+            <button id="btnRecargar" class="btn ghost btn-xs">Recargar</button>
+          </div>
+          <div class="inq-body">
+            <div class="inq-search">
+              <input id="q" type="search" placeholder="Buscar por nombre, apellido, DPI o casa…">
+              <button id="btnBuscarLista" class="btn primary btn-xs">Buscar</button>
+            </div>
+            <p class="muted" style="margin:.6rem 0 0">Haz clic en una fila para llenar el formulario.</p>
+
+            <div style="overflow:auto; margin-top:.6rem; max-height:360px;">
+              <table class="inq-table" id="tablaInq">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>DPI</th>
+                    <th>Casa</th>
+                  </tr>
+                </thead>
+                <tbody><!-- se llena con JS --></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="inq-foot">
+            <div class="muted" id="infoPagina">0–0 de 0</div>
+            <div>
+              <button id="prev" class="btn ghost btn-xs">◀</button>
+              <button id="next" class="btn primary btn-xs">▶</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Librerías (rutas relativas que ya te funcionan) -->
+  <script src="../Lib/sqljs/sql-wasm.js"></script>
+  <script src="../Js/sqlite.js"></script>
+  <script src="../Js/Consulta.js"></script>
+</body>
+</html>

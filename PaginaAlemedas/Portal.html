@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Residencial Alamedas – Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======= NAVBAR (sticky + blur) ======= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="Portal.html">
+        <span class="brand-main">ALAMEDAS</span>
+        <span class="brand-sub">Santa Ana</span>
+      </a>
+
+      <nav class="menu" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#comunidad">Comunidad</a>
+        <a href="#contacto">Contacto</a>
+        <!-- IMPORTANTES: enlaces relativos para GitHub Pages -->
+        <a class="btn ghost"   href="Calendario.html">Calendario</a>
+        <a class="btn primary" href="Consulta.html">Consulta</a>
+      </nav>
+
+      <!-- Botón móvil (decorativo) -->
+      <button class="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======= HERO / BIENVENIDA ======= -->
+  <section class="hero">
+    <div class="hero-bg" style="--hero: url('../Img/imagen1.jpg');"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-inner">
+      <h1>Bienvenido a Alamedas de Santa Ana</h1>
+      <p class="lead">
+        Convivencia, seguridad y espacios verdes para tu familia.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn primary lg" href="Consulta.html">Consulta de inquilino</a>
+        <a class="btn ghost   lg" href="Calendario.html">Ver calendario</a>
+      </div>
+    </div>
+    <div class="hero-bottom-fade"></div>
+  </section>
+
+  <!-- ======= SERVICIOS ======= -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2>Servicios del residencial</h2>
+      <p class="section-sub">
+        Administración transparente, cuotas, mantenimiento de áreas y comunicación vecinal.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <img src="../Img/imagen2.jpg" alt="Seguridad" class="card-img" />
+          <div class="card-body">
+            <h3>Seguridad</h3>
+            <p>Control de acceso y rondas vecinales coordinadas.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="../Img/imagen3.jpg" alt="Áreas verdes" class="card-img" />
+          <div class="card-body">
+            <h3>Áreas verdes</h3>
+            <p>Jardines y espacios para caminar y compartir.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="../Img/imagen4.jpg" alt="Comunicación" class="card-img" />
+          <div class="card-body">
+            <h3>Comunicación</h3>
+            <p>Calendario de eventos y avisos para toda la comunidad.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= COMUNIDAD ======= -->
+  <section id="comunidad" class="section alt">
+    <div class="container">
+      <h2>Vida en comunidad</h2>
+      <p class="section-sub">Actividades, talleres y jornadas de mantenimiento.</p>
+
+      <div class="cards small">
+        <article class="card">
+          <img src="../Img/imagen5.jpg" alt="Próximo evento" class="card-img" />
+          <div class="card-body">
+            <span class="chip">20 Ago</span>
+            <h3>Reunión de vecinos</h3>
+            <p>Presentación del plan de seguridad y mejoras.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="../Img/imagen6.jpg" alt="Próximo evento" class="card-img" />
+          <div class="card-body">
+            <span class="chip">23 Ago</span>
+            <h3>Fumigación</h3>
+            <p>Jornadas por bloques. Mantener ventanas cerradas.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="../Img/imagen7.jpg" alt="Próximo evento" class="card-img" />
+          <div class="card-body">
+            <span class="chip">28 Ago</span>
+            <h3>Taller de reciclaje</h3>
+            <p>Separación de residuos y compostaje.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACTO / FOOTER ======= -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-grid">
+      <div class="col">
+        <h4>Alamedas de Santa Ana</h4>
+        <p>Dirección: Alamedas de Santa Ana</p>
+        <p>Email: administracion@alamedas.gt</p>
+        <p>Horario: Lun–Vie 8:00–17:00</p>
+      </div>
+
+      <div class="col">
+        <h4>Enlaces</h4>
+        <ul class="links">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#comunidad">Comunidad</a></li>
+          <li><a href="Calendario.html">Calendario</a></li>
+          <li><a href="Consulta.html">Consulta</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Mapa</h4>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Residencial%20Alamedas%20Santa%20Ana&hl=es&z=15&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p style="margin-top:.75rem;">
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Residencial%20Alamedas%20Santa%20Ana" target="_blank" rel="noopener">
+            Ver en Google Maps
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © <span id="y"></span> Residencial Alamedas de Santa Ana
+    </div>
+  </footer>
+
+  <script>
+    // Sombra/blur al hacer scroll
+    const sh = document.getElementById('siteHeader');
+    const yEl = document.getElementById('y');
+    yEl.textContent = new Date().getFullYear();
+
+    const onScroll = () => {
+      if (window.scrollY > 8) sh.classList.add('scrolled');
+      else sh.classList.remove('scrolled');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  </script>
+</body>
+</html>
